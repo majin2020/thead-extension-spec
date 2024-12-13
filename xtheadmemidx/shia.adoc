@@ -2,7 +2,7 @@
 ==== th.shia
 
 Synopsis::
-Store indexed half-word, increment address after loading.
+Store indexed half-word, increment address after storage.
 
 Mnemonic::
 th.shia _rd_, (_rs1_), _imm5_, _imm2_

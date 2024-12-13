@@ -2,7 +2,7 @@
 ==== th.swia
 
 Synopsis::
-Store indexed word, increment address after loading.
+Store indexed word, increment address after storage.
 
 Mnemonic::
 th.swia _rd_, (_rs1_), _imm5_, _imm2_
