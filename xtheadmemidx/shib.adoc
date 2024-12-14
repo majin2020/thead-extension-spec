@@ -2,7 +2,7 @@
 ==== th.shib
 
 Synopsis::
-Store indexed half-word, increment address before loading.
+Store indexed half-word, increment address before storage.
 
 Mnemonic::
 th.shib _rd_, (_rs1_), _imm5_, _imm2_

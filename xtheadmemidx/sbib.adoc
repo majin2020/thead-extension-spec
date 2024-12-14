@@ -2,7 +2,7 @@
 ==== th.sbib
 
 Synopsis::
-Store indexed byte, increment address before loading.
+Store indexed byte, increment address before storage.
 
 Mnemonic::
 th.sbib _rd_, (_rs1_), _imm5_, _imm2_
