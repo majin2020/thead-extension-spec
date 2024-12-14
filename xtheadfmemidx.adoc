@@ -11,7 +11,7 @@ Extension version: 1.0.
 
 The table below gives an overview of the instructions:
 
-[cols="^3,^3,12,18",stripes=even,options="header"]
+[cols="^3,^3,^3,^3,12,18",stripes=even,options="header"]
 |===
 | RV32 | RV64 | F    | D    | Mnemonic              | Instruction
 | Y    | Y    | N    | Y    | th.flrd  _rd_, _rs1_, _rs2_, _imm2_ | <<#xtheadfmemidx-insns-flrd>>
