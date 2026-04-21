@@ -18,6 +18,19 @@ The instructions set of `XTheadVector` overlaps with the `V` Extension v0.7.1(ht
 * The extension `Zvamo` is renamed to `XTheadZvamo`.
 * The extension `Zvlsseg` (chapter 7.8) is not a subextension but a mandatory part of `XTheadVector`.
 * The Chapter `19. Divided Element Extension ('Zvediv')` is not part of `XTheadVector`.
+* Additional register overlap constraints beyond V Extension v0.7.1:
+** For narrowing instructions, regardless of LMUL, the destination cannot overlap with vs2 (v0.7.1 allows destructive overlap where the destination occupies the low half of vs2).
+** For vadc/vsbc instructions, if LMUL>1, the destination cannot overlap with v0.
+** For all comparison instructions, if LMUL>1, the destination cannot overlap with any source vector register, including v0.
+* When `vs` field is `00`, all vector instructions including vsetvl/vsetvli will raise an illegal instruction exception.
+* Encoding constraints:
+** vadc/vsbc/vmadc/vmsbc only support unmasked instructions (vm=1).
+** vmv.v.v/vmv.v.x/vmv.v.i instructions require vm=1 and vs2 must be all zeros. Similarly for fmv.v.f.
+** vid instruction requires vs2 to be all zeros.
+** vext instructions only support unmasked instructions (vm=1).
+** vmv.s.x instruction only supports unmasked (vm=1) and vs2 must be all zeros.
+** vfmv.f.s/vfmv.s.f only support unmasked instructions (vm=1).
+** vsetvl instruction requires bits [30:25] to be all zeros.
 * Beyond the instructions and pseudo instructions in the referenced specification, the following additional pseudo instructions are defined in order to improve compatibility with RVV 1.0:
 
 	th.vmmv.m vd,vs         => th.vmand.mm vd,vs,vs
